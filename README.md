@@ -47,6 +47,21 @@ The system is designed as a **Modular Monolith** (migrating to Microservices).
 
 ---
 
+## 📸 Project Screenshots
+
+### 1. Landing Page
+*View of the dashboard where recruiters can manage job postings and see applicant stats.*
+![Recruiter Dashboard](screenshots/home.png)
+
+### 2. Job Search
+*The AI engine analyzing a candidate's resume against a job description.*
+![AI Matching](screenshots/jobsearch.png)
+
+### 3. Job Details
+*Candidate view showing the job search interface with location and experience filters.*
+![Job Search](screenshots/jobdetail.png)
+
+
 ## 🛠️ Tech Stack
 
 | Component | Technology | Use Case |
