@@ -1,0 +1,93 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}Home | Job Board{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="container">
+
+    <!-- LEFT -->
+    <div>
+      <span class="badge">4536+ Jobs Listed</span>
+      <h1>Find your <span>Dream Job</span></h1>
+      <p>
+        AI-powered job matching with transparent scores that actually
+        reflect your skills.
+      </p>
+
+      <a href="#" class="btn-primary">Upload Your Resume</a>
+    </div>
+
+    <!-- RIGHT VISUAL -->
+    <div class="hero-visual">
+      <img src="{% static 'img/ai-job.jpg' %}" alt="AI Job Matching" style="max-width:100%;" class="circle-img">
+    </div>
+
+  </div>
+</section>
+
+
+<div class="container">
+  <div class="search-box">
+    <input placeholder="Search keyword">
+    <input placeholder="Location">
+    <select><option>Category</option></select>
+    <button>Find Job</button>
+  </div>
+</div>
+
+<section class="job-list-section">
+  <div class="container">
+
+    <div class="job-list-header">
+      <h2>Job Listings</h2>
+      <a href="#" class="browse-btn">Browse More Jobs</a>
+    </div>
+
+    <!-- JOB CARD -->
+    <div class="job-card">
+      <div class="job-left">
+        <div class="job-logo"></div>
+
+        <div class="job-info">
+          <h3>Software Engineer</h3>
+          <div class="job-meta">
+            <span>📍 California, USA</span>
+            <span>⏱ Part-time</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="job-right">
+        <span class="match-score">85% Match</span>
+        <button class="apply-btn">Apply Now</button>
+      </div>
+    </div>
+
+    <!-- JOB CARD -->
+    <div class="job-card">
+      <div class="job-left">
+        <div class="job-logo"></div>
+
+        <div class="job-info">
+          <h3>Digital Marketer</h3>
+          <div class="job-meta">
+            <span>📍 Remote</span>
+            <span>⏱ Full-time</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="job-right">
+        <span class="match-score low">62% Match</span>
+        <button class="apply-btn">Apply Now</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+{% endblock %}

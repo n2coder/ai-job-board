@@ -1,0 +1,35 @@
+{% extends "base/base.html" %}
+{% block title %}Jobs{% endblock %}
+
+{% block content %}
+<section class="job-section">
+    <div class="job-container">
+
+        <h2 style="margin-bottom:30px;">Job Listings</h2>
+
+        {% for job in jobs %}
+        <div class="job-card">
+
+            <div class="job-left">
+                <div class="job-logo"></div>
+
+                <div>
+                    <div class="job-title">{{ job.title }}</div>
+                    <div class="job-meta">
+                        {{ job.company.name }} · {{ job.location }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="job-right">
+                <a href="#" class="apply-btn">Apply Now</a>
+            </div>
+
+        </div>
+        {% empty %}
+            <p>No jobs available</p>
+        {% endfor %}
+
+    </div>
+</section>
+{% endblock %}

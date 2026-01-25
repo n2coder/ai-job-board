@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Job Board{% endblock %}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/normalize.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+</head>
+
+<body>
+
+{% include "base/navbar.html" %}
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+<header class="navbar">
+  <div class="container">
+    <strong>AI Job Board</strong>
+    <div>
+      {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}">Logout</a>
+      {% else %}
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'register' %}">Register</a>
+      {% endif %}
+    </div>
+  </div>
+</header>
+
+
+
+{% endblock %}
+
+<footer id="footer">
+    <div class="container">
+        <p>© {{ now|date:"Y" }} Job Board</p>
+    </div>
+</footer>
+
+<!-- JS -->
+<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+<script src="{% static 'js/jquery.nav.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+</html>

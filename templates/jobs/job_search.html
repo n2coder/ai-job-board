@@ -1,0 +1,78 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container job-search-page">
+
+  <h1 class="page-title">Job Search</h1>
+
+  <form method="get" class="job-search-form">
+
+    <!-- ROW 1: FULL WIDTH SEARCH -->
+    <div class="search-row">
+      <input
+        type="text"
+        name="q"
+        placeholder="Search by job title, skills or keywords"
+        value="{{ keyword }}"
+        class="search-input"
+      />
+
+      <button type="submit" class="btn-primary">
+        Find Jobs
+      </button>
+    </div>
+
+    <!-- ROW 2: FILTERS -->
+    <div class="filter-row">
+      <input
+        type="text"
+        name="location"
+        placeholder="Location"
+        value="{{ location }}"
+      />
+
+      <select name="category">
+        <option value="">All Categories</option>
+        <option value="Engineering">Engineering</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Design">Design</option>
+      </select>
+
+      <select name="job_type">
+        <option value="">All Job Types</option>
+        <option value="Full-time">Full-time</option>
+        <option value="Part-time">Part-time</option>
+        <option value="Remote">Remote</option>
+      </select>
+    </div>
+
+  </form>
+
+  <!-- JOB LIST -->
+  <div class="job-list">
+    {% for job in jobs %}
+      <div class="job-card">
+        <div>
+          <h3><a href="{% url 'job_detail' job.id %}">{{ job.title }}</a></h3>
+          <p>
+            📍 {{ job.location }} |
+            🏢 {{ job.company.name }} |
+            ⏱ {{ job.job_type }}
+          </p>
+        </div>
+
+        <div class="job-actions">
+          <span class="match-score">
+            Match: --%
+          </span>
+          <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+      </div>
+    {% empty %}
+      <p>No jobs found.</p>
+    {% endfor %}
+  </div>
+
+</div>
+{% endblock %}

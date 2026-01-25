@@ -1,0 +1,37 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<div class="container job-detail-page">
+
+  <div class="job-header">
+    <h1>{{ job.title }}</h1>
+    <p class="job-meta">
+      📍 {{ job.location }} |
+      🏢 {{ job.company.name }} |
+      ⏱ {{ job.job_type }} |
+      🧩 {{ job.category }}
+    </p>
+
+    {% if match_score %}
+      <span class="match-badge">
+        Match: {{ match_score }}%
+      </span>
+    {% endif %}
+  </div>
+
+  <div class="job-section">
+    <h3>Job Description</h3>
+    <p>{{ job.job_description }}</p>
+  </div>
+
+  <div class="job-section">
+    <h3>Required Skills</h3>
+    <p>{{ job.must_have_skills }}</p>
+  </div>
+
+  <div class="job-actions">
+    <a href="#" class="btn-primary">Apply Now</a>
+  </div>
+
+</div>
+{% endblock %}

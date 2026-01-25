@@ -1,0 +1,20 @@
+{% if jobs %}
+    {% for job in jobs %}
+        <div class="job-card mb-3">
+            <h5>{{ job.title }}</h5>
+            <p>{{ job.location }} | {{ job.job_type.name }}</p>
+
+            {% if job.match_score %}
+                <span class="badge bg-success">
+                    {{ job.match_score }}% Match
+                </span>
+            {% endif %}
+
+            <a href="{% url 'job_detail' job.id %}" class="btn btn-sm btn-primary">
+                Apply Now
+            </a>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No jobs found.</p>
+{% endif %}
