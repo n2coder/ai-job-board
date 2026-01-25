@@ -60,7 +60,4 @@ The system is designed as a **Modular Monolith** (migrating to Microservices).
 
 ---
 
-## ⚡ Installation & Setup
-
-Follow these steps to run the project locally.
 
