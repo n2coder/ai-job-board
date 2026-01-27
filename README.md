@@ -10,7 +10,7 @@
 **Line.IO** is a full-stack HR Tech platform that automates the initial screening process. Unlike standard job portals, it uses **Natural Language Processing (NLP)** to semantically match candidate resumes against job descriptions, helping recruiters focus on the most relevant talent instantly.
 
 > **Why this project?**
-> With 13+ years of experience in HR Leadership, I realized that the biggest bottleneck in hiring isn't *finding* applicants, but *filtering* them. I built this system to solve the "Resume Black Hole" problem using a data-driven approach.
+> With vast experience in HR Leadership, I realized that the biggest bottleneck in hiring isn't *finding* applicants, but *filtering* them. I built this system to solve the "Resume Black Hole" problem using a data-driven approach.
 
 ---
 
