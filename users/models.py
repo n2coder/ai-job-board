@@ -12,6 +12,5 @@ class User(AbstractUser):
         choices=ROLE_CHOICES
     )
 
-def __str__(self):
+    def __str__(self):
         return f"{self.username} ({self.role})"
-# Create your models here.
